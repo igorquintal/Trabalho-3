@@ -1,7 +1,7 @@
 import java.util.*;
 
 /*CLASSE HEALTHPOTION, FILHA DE POTION*/
-public class HealthPotion extends Potion {
+public class HealthPotion extends Potion implements Usable {
 
 	/*CONSTRUTOR*/
 	public HealthPotion (String name, double price, int restorepts) {
@@ -14,6 +14,5 @@ public class HealthPotion extends Potion {
 
 		int hp = getRestorePts();
 		ch.addHP(hp);								/*ADICIONA-SE OS RESTOREPTS A MP DO PERSONAGEM*/
-		ch.backpack().removeItem(item.getName());	/*DELETA A POCAO DO INVENTARIO*/
 	}
 }

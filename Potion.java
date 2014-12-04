@@ -37,13 +37,4 @@ public abstract class Potion extends Item {
 		return restorepts;
 	}
 
-	/*METODO VIRTUAL PURO, DEFINIDO NAS CLASSES HEALTH E MANA POTION*/
-	public abstract void use(Character ch, Item item);
-
-	/*FUNCAO NAO PODE SER ULTILIZADA, POIS UMA POCAO E DESTRUIDA APOS SE USADA NA FUNCAO USE*/
-	public void unuse(Character ch, Item item) {
-
-	 	System.out.println("UMA POCAO NAO PODE SER DESEQUIPADA");
-	 	
-	 }
 }

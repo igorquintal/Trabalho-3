@@ -1,6 +1,6 @@
 import java.util.*;
 
-public abstract class Item {
+public abstract class Item implements Usable{
 	
 	/*ATRIBUTOS*/
 	private String name;
@@ -40,9 +40,4 @@ public abstract class Item {
 		return price;
 	}
 
-	/*FUNCAO VIRTUAL PURA QUE EQUIPA UM ITEM (WEAPON OU ARMOR) OU USA UMA POCAO*/
-	public abstract void use(Character ch, Item item);
-
-	/*FUNCAO VIRTUAL PURA QUE DESEQUIPA UM ITEM (WEAPON OU ARMOR)*/	
-	public abstract void unuse(Character ch, Item item);
 }

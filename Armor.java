@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Armor extends Item {
+public class Armor extends Item implements Usable {
 
 	protected int defensepts;			/*DEFENSEPTS DE UM PERSONAGEM*/
 	protected double weight;			/*PESO DE UMA ARMA*/

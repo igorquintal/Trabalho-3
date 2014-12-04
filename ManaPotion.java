@@ -1,7 +1,7 @@
 import java.util.*;
 
 /*CLASSE MANAPOTION, FILHA DE POTION*/
-public class ManaPotion extends Potion {
+public class ManaPotion extends Potion implements Usable{
 
 	/*CONSTRUTOR*/
 	public ManaPotion (String name, double price, int restorepts) {
@@ -14,6 +14,5 @@ public class ManaPotion extends Potion {
 
 		int mp = getRestorePts();
 		ch.addMP(mp);								/*ADICIONA-SE OS RESTOREPTS A MP DO PERSONAGEM*/						
-		ch.backpack().removeItem(item.getName());	/*DELETA A POCAO DO INVENTARIO*/
 	}
 }

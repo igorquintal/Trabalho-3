@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Weapon extends Item {
+public class Weapon extends Item implements Usable {
 
 	protected int attackpts;		/*VARIAVEL ATTACKPTS*/
 	protected double range;			/*VARIAVEL RANGE*/
