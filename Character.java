@@ -203,17 +203,23 @@ public abstract class Character {
 	}	
 
 	/*EQUIPA UM ITEM, QUE DEVE ESTAR NO INVENTARIO*/
-	public void equip (Item aux) {
+	public void equip (Item item) {
 
-		backpack().useItem(this, aux);
+		if(myitems.searchItem(item.getName()) == null)
+		{
+			System.out.println("ITEM NÃO PODE SER ESQUIPADO, POIS NÃO ESTÁ NO INVENTARIO");
+			return;
+		}
+
+		backpack().useItem(this, item, item);
 
 	}
 
 	/*DESEQUIPA UM ITEM, QUE DEVE ESTAR NO INVENTARIO*/
-	public void unequip (Item aux) {
+	/*public void unequip (Item aux) {
 
 		backpack().unuseItem(this, aux);
-	}
+	}*/
 
 	/*ATACAR OUTRO PERSONAGEM*/
 	public void attack(Character ch) {
