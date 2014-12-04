@@ -188,9 +188,9 @@ public class Inventory {
 	}
 
 	/*EQUIPA UM ITEM (ARMOR OU WEAPON) OU UA UMA POCAO*/
-	public int useItem(Character ch, Item aux) {
+	public int useItem(Character ch, Item item, Usable aux) {
 		
-		String search = aux.getName();
+		String search = item.getName();
 
 		if (searchItem(search) == null)
 		{
@@ -198,13 +198,13 @@ public class Inventory {
 			return 0;
 		}
 
-		aux.use(ch, aux);
+		aux.use(ch, item);
 
 		return 0;
 	}
 
 	/*FUNCAO QUE DESEQUIPA UM ITEM (ARMOR OU WEAPON) (NAO APLICAVEL A POTION)*/
-	public void unuseItem (Character ch, Item aux) {
+	/*public void unuseItem (Character ch, Item aux) {
 
 		if (searchItem(aux.getName()) == null)
 		{
@@ -214,6 +214,6 @@ public class Inventory {
 
 		aux.unuse(ch, aux);
 
-	}
+	}*/
 
 }
