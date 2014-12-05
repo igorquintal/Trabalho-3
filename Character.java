@@ -203,15 +203,9 @@ public abstract class Character {
 	}	
 
 	/*EQUIPA UM ITEM, QUE DEVE ESTAR NO INVENTARIO*/
-	public void equip (Item item) {
+	public void equip (Item aux) {
 
-		if(myitems.searchItem(item.getName()) == null)
-		{
-			System.out.println("ITEM NÃO PODE SER ESQUIPADO, POIS NÃO ESTÁ NO INVENTARIO");
-			return;
-		}
-
-		backpack().useItem(this, item, item);
+		backpack().useItem(aux);
 
 	}
 
@@ -221,14 +215,23 @@ public abstract class Character {
 		backpack().unuseItem(this, aux);
 	}*/
 
+	/*INSERIR UM ITEM NO INVENTARIO*/
+	public void insertItem(Item aux) {
+
+		aux.setOwner(this);
+		backpack().insertItem(aux);
+	}
+
+
+
 	/*ATACAR OUTRO PERSONAGEM*/
 	public void attack(Character ch) {
 
 		double miss_chance = (0.1/XP)*100;				//CHANCE  DE ATAQUE FALHAR
 		double critical_strike = 0.02*(XP/2)*100;		//CHANCE DE ATAQUE CRÍTICO
-		double rand_n = returnRandom1();			//GERADOR DE NÚMERO ALEATÓRIO
+		double rand_n = returnRandom1();				//GERADOR DE NÚMERO ALEATÓRIO
 
-		if (rand_n <= miss_chance)					//ATAQUE FALHOU
+		if (rand_n <= miss_chance)						//ATAQUE FALHOU
 		{
 			System.out.println ("MISS !!"); 		//  ##OPCIONAL !!
 			return;

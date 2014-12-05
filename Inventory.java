@@ -61,14 +61,12 @@ public class Inventory {
 	/*IMPRIME TODOS OS ITENS DO INVENTARIO*/
 	public void printAllItems() {
 
-		System.out.println("IMPRIMINDO OS ITENS NO INVENTARIO: ");
-
 		for(int i=0; i<items.size(); i++)
 		{
 			System.out.println(items.get(i).first.getName());
 		}
 
-		System.out.println("IMPRIMINDO OS ITENS EQUIPADOS NO INVENTARIO: ");
+		System.out.println("Imprimindo somente itens equipados: ");
 
 		for(int i=0; i<items.size(); i++)
 		{
@@ -90,6 +88,11 @@ public class Inventory {
 			}
 		}
 		return null;
+	}
+
+	public int getSize()
+	{
+		return items.size();
 	}
 
 	/*PROCURA E RETORNA UM ITEM DE ACORDO COM SUA POSIÇÃO*/
@@ -188,9 +191,9 @@ public class Inventory {
 	}
 
 	/*EQUIPA UM ITEM (ARMOR OU WEAPON) OU UA UMA POCAO*/
-	public int useItem(Character ch, Item item, Usable aux) {
+	public int useItem(Item aux) {
 		
-		String search = item.getName();
+		String search = aux.getName();
 
 		if (searchItem(search) == null)
 		{
@@ -198,7 +201,7 @@ public class Inventory {
 			return 0;
 		}
 
-		aux.use(ch, item);
+		aux.use();
 
 		return 0;
 	}

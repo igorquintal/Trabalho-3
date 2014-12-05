@@ -1,7 +1,7 @@
 import java.util.*;
 
 /*CLASSE MANAPOTION, FILHA DE POTION*/
-public class ManaPotion extends Potion implements Usable{
+public class ManaPotion extends Potion {
 
 	/*CONSTRUTOR*/
 	public ManaPotion (String name, double price, int restorepts) {
@@ -10,9 +10,10 @@ public class ManaPotion extends Potion implements Usable{
 	}
 
 	/*FUNÇÃO USE ULTILIZA A POÇÃO (PARAMETRO PERSONAGEM E ITEM)*/
-	public void use(Character ch, Item item) {
+	public void use() {
 
 		int mp = getRestorePts();
-		ch.addMP(mp);								/*ADICIONA-SE OS RESTOREPTS A MP DO PERSONAGEM*/						
+		this.getOwner().addMP(mp);								/*ADICIONA-SE OS RESTOREPTS A MP DO PERSONAGEM*/						
+		this.getOwner().backpack().removeItem(this.getName());	/*DELETA A POCAO DO INVENTARIO*/
 	}
 }

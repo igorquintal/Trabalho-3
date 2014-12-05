@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Armor extends Item implements Usable {
+public class Armor extends Item {
 
 	protected int defensepts;			/*DEFENSEPTS DE UM PERSONAGEM*/
 	protected double weight;			/*PESO DE UMA ARMA*/
@@ -42,6 +42,16 @@ public class Armor extends Item implements Usable {
 	public int getDefensePts () {
 
 		return defensepts;
+	}
+
+	/*IMPRIME INFORMAÇÕES DO ITEM*/
+	public void printInfo() {
+
+		System.out.println("Imprimindo informações de item:")
+		System.out.println(" --Nome: " + this.getName());
+		System.out.println(" --Price: " + this.getPrice());
+		System.out.println(" --Weight: " + this.getWeight());
+		System.out.println(" --Defense Points: " + this.getWeight());
 	}
 
 	/*FUNCAO USE: EQUIPA A ARMADURA*/

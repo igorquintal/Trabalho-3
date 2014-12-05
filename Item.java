@@ -1,10 +1,11 @@
 import java.util.*;
 
-public abstract class Item implements Usable{
+public abstract class Item implements Usable {
 	
 	/*ATRIBUTOS*/
 	private String name;
 	private double price;
+	private Character owner;
 
 	/*METODOS*/
 	
@@ -22,6 +23,18 @@ public abstract class Item implements Usable{
 
 	}
 	
+	/*DEFINE DONO*/
+	public void setOwner(Character ch)
+	{
+		owner = ch;
+	}
+
+	/*RETORNA O DONO*/
+	public Character getOwner()
+	{
+		return owner;
+	}
+
 	/*RETORNA O NOME DO ITEM*/
 	public String getName () {
 
@@ -33,6 +46,9 @@ public abstract class Item implements Usable{
 
 	/*RETORNA OS ONTOS DE DEFESA DE UM ITEM*/
 	public abstract int getDefensePts ();
+
+	/*IMPRIME AS INFORMAÇÕES DO ITEM*/
+	public abstract void printInfo();
 
 	/*RETORNA O PREÇO DE UM ITEM*/
 	public double getPrice () {

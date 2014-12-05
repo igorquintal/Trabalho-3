@@ -1,7 +1,7 @@
 import java.util.*;
 
 /*CLASSE HEALTHPOTION, FILHA DE POTION*/
-public class HealthPotion extends Potion implements Usable {
+public class HealthPotion extends Potion {
 
 	/*CONSTRUTOR*/
 	public HealthPotion (String name, double price, int restorepts) {
@@ -10,9 +10,10 @@ public class HealthPotion extends Potion implements Usable {
 	}
 
 	/*FUNÇÃO USE ULTILIZA A POÇÃO (PARAMETRO PERSONAGEM E ITEM)*/
-	public void use(Character ch, Item item) {
+	public void use() {
 
 		int hp = getRestorePts();
-		ch.addHP(hp);								/*ADICIONA-SE OS RESTOREPTS A MP DO PERSONAGEM*/
+		this.getOwner().addHP(hp);								/*ADICIONA-SE OS RESTOREPTS A MP DO PERSONAGEM*/
+		this.getOwner().backpack().removeItem(this.getName());	/*DELETA A POCAO DO INVENTARIO*/
 	}
 }
